@@ -21,7 +21,7 @@ namespace LogicPoint.PrecedenceClimbingParser.Printing
             {
                 var node = (BinaryOperatorNode)value;
                 writer.WriteStartObject();
-                writer.WritePropertyName(node.Token.Element);
+                writer.WritePropertyName(node.Token);
                 writer.WriteStartArray();
                 serializer.Serialize(writer, node.LHS);
                 serializer.Serialize(writer, node.RHS);
@@ -31,7 +31,7 @@ namespace LogicPoint.PrecedenceClimbingParser.Printing
             else if (value.GetType() == typeof(NumeralNode))
             {
                 var node = (NumeralNode)value;
-                writer.WriteValue(node.Value);
+                writer.WriteValue(node.Token);
             }
         }
     }

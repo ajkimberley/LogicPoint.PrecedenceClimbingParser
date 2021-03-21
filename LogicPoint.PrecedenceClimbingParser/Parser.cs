@@ -23,7 +23,7 @@ namespace LogicPoint.PrecedenceClimbingParser
                 else
                 {
                     var rhs = ParseExpression(tokens, currentToken.Associativity == Associativity.Left ? currentToken.PrecedenceLevel + 1 : currentToken.PrecedenceLevel);
-                    lhs = new BinaryOperatorNode(currentToken, lhs, rhs);
+                    lhs = new BinaryOperatorNode(currentToken.Element, lhs, rhs);
                 }
             }
             return lhs;
@@ -34,7 +34,7 @@ namespace LogicPoint.PrecedenceClimbingParser
             var currentToken = tokens.Current;
             if (currentToken.TokenType == TokenType.Number) 
             {
-                var numeralNode = new NumeralNode(currentToken, int.Parse(currentToken.Element));
+                var numeralNode = new NumeralNode(currentToken.Element);
                 tokens.MoveNext();
                 return numeralNode;
             }
