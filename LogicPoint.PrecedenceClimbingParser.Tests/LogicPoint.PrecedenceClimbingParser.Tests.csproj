@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LogicPoint.PrecedenceClimbingParser.Printing\LogicPoint.PrecedenceClimbingParser.Printing.csproj" />
     <ProjectReference Include="..\LogicPoint.PrecedenceClimbingParser\LogicPoint.PrecedenceClimbingParser.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using LogicPoint.PrecedenceClimbingParser.Printing;
+using Xunit;
 
 namespace LogicPoint.PrecedenceClimbingParser.Tests
 {
@@ -8,6 +9,7 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
         public void Test1()
         {
             var tree = Parser.Parse("1+1*2+1");
+            var printedTree = Printer.Print(tree);
             Assert.True(true);
         }
     }

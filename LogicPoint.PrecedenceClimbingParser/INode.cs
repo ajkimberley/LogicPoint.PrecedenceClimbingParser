@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Runtime.Serialization;
 
 namespace LogicPoint.PrecedenceClimbingParser
 {
@@ -11,6 +13,7 @@ namespace LogicPoint.PrecedenceClimbingParser
         public INode Root { get; set; }
     }
 
+    [DataContract]
     public class NumeralNode : INode
     {
         public NumeralNode(Token token, int value)
@@ -19,9 +22,11 @@ namespace LogicPoint.PrecedenceClimbingParser
             Value = value;
         }
         public Token Token { get; }
+        [DataMember]
         public int Value { get; }
     }
 
+    [DataContract]
     public class BinaryOperatorNode : INode
     {
         public BinaryOperatorNode(Token token, INode lhs, INode rhs)
@@ -30,9 +35,11 @@ namespace LogicPoint.PrecedenceClimbingParser
             LHS = lhs;
             RHS = rhs;
         }
-
+        [DataMember]
         public Token Token { get; }
+        [DataMember]
         public INode LHS { get; }
+        [DataMember]
         public INode RHS { get; }
     }
 }

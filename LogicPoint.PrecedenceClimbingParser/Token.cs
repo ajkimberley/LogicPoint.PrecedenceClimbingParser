@@ -1,5 +1,8 @@
-﻿namespace LogicPoint.PrecedenceClimbingParser
+﻿using System.Runtime.Serialization;
+
+namespace LogicPoint.PrecedenceClimbingParser
 {
+    [DataContract]
     public class Token
     {
         public Token(TokenType tokenType, Associativity associativity, int precedenceLevel, string element)
@@ -13,6 +16,7 @@
         public TokenType TokenType { get; }
         public Associativity Associativity { get; }
         public int PrecedenceLevel { get; }
+        [DataMember]
         public string Element { get; }
     }
 }
