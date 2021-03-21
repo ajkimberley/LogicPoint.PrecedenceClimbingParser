@@ -8,11 +8,6 @@ namespace LogicPoint.PrecedenceClimbingParser
     {
     }
 
-    public class RootNode : INode
-    {
-        public INode Root { get; set; }
-    }
-
     [DataContract]
     public class NumeralNode : INode
     {

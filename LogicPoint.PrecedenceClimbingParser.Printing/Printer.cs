@@ -6,7 +6,11 @@ namespace LogicPoint.PrecedenceClimbingParser.Printing
     {
         public static string Print(INode tree)
         {
-            return JsonConvert.SerializeObject(tree);
+            var settings = new JsonSerializerSettings();
+            settings.Converters.Add(new ASTSerialzer());
+            settings.Formatting = Formatting.Indented;
+
+            return JsonConvert.SerializeObject(tree, settings);
         }
     }
 }
