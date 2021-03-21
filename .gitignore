@@ -1,6 +1,3 @@
-This answer is not useful
-I'm not sure why this doesn't work for you. In case it helps, here's a typical .gitignore file from one of my Visual Studio/git projects:
-
 *.suo
 *.user
 _ReSharper.*
