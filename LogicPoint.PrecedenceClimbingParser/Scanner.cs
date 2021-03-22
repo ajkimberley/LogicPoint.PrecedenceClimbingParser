@@ -17,7 +17,7 @@ namespace LogicPoint.PrecedenceClimbingParser
                     var numeral = currentChar.ToString();
                     while (char.IsDigit((char)reader.Peek()))
                     {
-                        numeral += reader.Read();
+                        numeral += (char)reader.Read();
                     }
                     yield return new Token(TokenType.Number, Associativity.None, 0, numeral);
                 }
