@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicPoint.PrecedenceClimbi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicPoint.PrecedenceClimbingParser.Tests", "LogicPoint.PrecedenceClimbingParser.Tests\LogicPoint.PrecedenceClimbingParser.Tests.csproj", "{2AE08BBB-A614-43DB-AE54-13E2E8D440E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicPoint.PrecedenceClimbingParser.Printing", "LogicPoint.PrecedenceClimbingParser.Printing\LogicPoint.PrecedenceClimbingParser.Printing.csproj", "{5E6CAE9E-F6ED-4CF9-8146-1FB0A05BF8B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicPoint.PrecedenceClimbingParser.Printing", "LogicPoint.PrecedenceClimbingParser.Printing\LogicPoint.PrecedenceClimbingParser.Printing.csproj", "{5E6CAE9E-F6ED-4CF9-8146-1FB0A05BF8B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicPoint.PrecedenceClimbingParser.Console", "LogicPoint.PrecedenceClimbingParser.Console\LogicPoint.PrecedenceClimbingParser.Console.csproj", "{ADA0AC64-EBAF-4F43-93F2-FD8DCC45A952}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{5E6CAE9E-F6ED-4CF9-8146-1FB0A05BF8B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E6CAE9E-F6ED-4CF9-8146-1FB0A05BF8B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E6CAE9E-F6ED-4CF9-8146-1FB0A05BF8B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADA0AC64-EBAF-4F43-93F2-FD8DCC45A952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADA0AC64-EBAF-4F43-93F2-FD8DCC45A952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADA0AC64-EBAF-4F43-93F2-FD8DCC45A952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADA0AC64-EBAF-4F43-93F2-FD8DCC45A952}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
