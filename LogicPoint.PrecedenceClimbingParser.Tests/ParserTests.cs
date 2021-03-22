@@ -105,6 +105,32 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
             tree.Should().BeEquivalentTo(expected);
         }
 
+        [Fact]
+        public void Given_MultiplicationFollowedByBracketedAddition_Then_GenerateTreeWithAdditionTakingPrecedence()
+        {
+            var tree = Parser.Parse("1*(2+3)");
+            var expected = new BinaryOperatorNode("*",
+                                                  new NumeralNode("1"),
+                                                  new BinaryOperatorNode("+",
+                                                                         new NumeralNode("2"),
+                                                                         new NumeralNode("3")));
+            tree.Should().BeEquivalentTo(expected);
+        }
+
+        [Fact]
+        public void Given_BracketedAdditionInBetweenTwoExponentiations_Then_GenerateTreeWithAdditionTakingPrecedence()
+        {
+            var tree = Parser.Parse("1^(2+3)^4");
+            var expected = new BinaryOperatorNode("^",
+                                                 new NumeralNode("1"),
+                                                 new BinaryOperatorNode("^",
+                                                                        new BinaryOperatorNode("+",
+                                                                                               new NumeralNode("2"),
+                                                                                               new NumeralNode("3")),
+                                                                        new NumeralNode("4")));
+            tree.Should().BeEquivalentTo(expected);
+        }
+
         [Theory]
         [InlineData(new object[] { "+" })]
         [InlineData(new object[] { "1++" })]

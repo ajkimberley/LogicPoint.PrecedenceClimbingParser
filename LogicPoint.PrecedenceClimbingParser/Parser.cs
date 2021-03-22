@@ -32,6 +32,13 @@ namespace LogicPoint.PrecedenceClimbingParser
         private static INode ParseElement(IEnumerator<Token> tokens)
         {
             var currentToken = tokens.Current;
+            if (currentToken.TokenType == TokenType.LeftBracket)
+            {
+                var value = ParseExpression(tokens, 1);
+                if (tokens.Current.TokenType != TokenType.RightBracket) throw new Exception("Unmatched left bracket detected");
+                tokens.MoveNext();
+                return value;
+            }
             if (currentToken.TokenType == TokenType.Number) 
             {
                 var numeralNode = new NumeralNode(currentToken.Element);

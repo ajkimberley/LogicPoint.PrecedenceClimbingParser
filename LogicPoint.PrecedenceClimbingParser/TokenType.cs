@@ -7,6 +7,8 @@
         SubtractionOperator,
         MultiplicationOperator,
         DivisionOperation,
-        ExponentiationOperator
+        ExponentiationOperator,
+        LeftBracket,
+        RightBracket
     }
 }

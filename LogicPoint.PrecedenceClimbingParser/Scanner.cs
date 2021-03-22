@@ -41,6 +41,12 @@ namespace LogicPoint.PrecedenceClimbingParser
                         case "^":
                             yield return new Token(TokenType.ExponentiationOperator, Associativity.Right, 3, charString);
                             break;
+                        case "(":
+                            yield return new Token(TokenType.LeftBracket, Associativity.None, 0, charString);
+                            break;
+                        case ")":
+                            yield return new Token(TokenType.RightBracket, Associativity.None, 0, charString);
+                            break;
                         default:
                             throw new ArgumentException("Character not recognized in input.", nameof(input));
                     }
