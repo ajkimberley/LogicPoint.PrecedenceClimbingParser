@@ -14,7 +14,7 @@ namespace LogicPoint.PrecedenceClimbingParser.Console
                 var printedTree = Print(tree);
                 System.Console.Clear();
                 System.Console.WriteLine(printedTree);
-                System.Console.ReadKey();
+                System.Console.ReadKey(true);
             }
         }
 
