@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace LogicPoint.PrecedenceClimbingParser.BasicArithmetic
+namespace LogicPoint.PrecedenceClimbingParser.SententialCalculus
 {
-    public static class Scanner
+    public class Scanner
     {
         public static IEnumerable<Token> Scan(string input)
         {
@@ -12,34 +12,34 @@ namespace LogicPoint.PrecedenceClimbingParser.BasicArithmetic
             while (reader.Peek() != -1)
             {
                 var currentChar = (char)reader.Read();
-                if (char.IsDigit(currentChar))
+                if (char.IsLetter(currentChar))
                 {
-                    var numeral = currentChar.ToString();
-                    while (char.IsDigit((char)reader.Peek()))
+                    var letter = currentChar.ToString();
+                    while (char.IsLetter((char)reader.Peek()))
                     {
-                        numeral += (char)reader.Read();
+                        letter += (char)reader.Read();
                     }
-                    yield return new Token(TokenType.Number, Associativity.None, 0, numeral);
+                    yield return new Token(TokenType.Variable, Associativity.None, 0, letter);
                 }
                 else
                 {
                     var charString = currentChar.ToString();
                     switch (charString)
                     {
+                        case "~":
+                            yield return new Token(TokenType.NegationOperator, Associativity.None, 1, charString);
+                            break;
+                        case "&":
+                            yield return new Token(TokenType.ConditionalOperator, Associativity.Left, 2, charString);
+                            break;
                         case "+":
-                            yield return new Token(TokenType.AdditionOperator, Associativity.Left, 1, charString);
+                            yield return new Token(TokenType.DisjunctionOperator, Associativity.Left, 3, charString);
                             break;
-                        case "-":
-                            yield return new Token(TokenType.SubtractionOperator, Associativity.Left, 1, charString);
+                        case ">":
+                            yield return new Token(TokenType.ConditionalOperator, Associativity.Left, 4, charString);
                             break;
-                        case "*":
-                            yield return new Token(TokenType.MultiplicationOperator, Associativity.Left, 2, charString);
-                            break;
-                        case "/":
-                            yield return new Token(TokenType.DivisionOperation, Associativity.Left, 2, charString);
-                            break;
-                        case "^":
-                            yield return new Token(TokenType.ExponentiationOperator, Associativity.Right, 3, charString);
+                        case "#":
+                            yield return new Token(TokenType.BiConditionalOperator, Associativity.Left, 4, charString);
                             break;
                         case "(":
                             yield return new Token(TokenType.LeftBracket, Associativity.None, 0, charString);

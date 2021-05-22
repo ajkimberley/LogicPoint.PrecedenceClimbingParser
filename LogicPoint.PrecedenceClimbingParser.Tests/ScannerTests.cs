@@ -1,8 +1,9 @@
-using static LogicPoint.PrecedenceClimbingParser.Scanner;
+using static LogicPoint.PrecedenceClimbingParser.BasicArithmetic.Scanner;
 using System.Collections.Generic;
 using Xunit;
 using System.Linq;
 using System;
+using LogicPoint.PrecedenceClimbingParser.BasicArithmetic;
 
 namespace LogicPoint.PrecedenceClimbingParser.Tests
 {

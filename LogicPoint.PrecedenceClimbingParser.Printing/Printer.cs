@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using LogicPoint.PrecedenceClimbingParser.Abstractions;
+using Newtonsoft.Json;
 
 namespace LogicPoint.PrecedenceClimbingParser.Printing
 {

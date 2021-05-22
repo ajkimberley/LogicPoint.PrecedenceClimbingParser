@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace LogicPoint.PrecedenceClimbingParser
+namespace LogicPoint.PrecedenceClimbingParser.Abstractions
 {
     public interface INode
     {
@@ -8,9 +8,9 @@ namespace LogicPoint.PrecedenceClimbingParser
     }
 
     [DataContract]
-    public class NumeralNode : INode
+    public class LeafNode : INode
     {
-        public NumeralNode(string nodeToken)
+        public LeafNode(string nodeToken)
         {
             Token = nodeToken;
         }

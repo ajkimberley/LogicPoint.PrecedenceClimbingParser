@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LogicPoint.PrecedenceClimbingParser.BasicArithmetic
+namespace LogicPoint.PrecedenceClimbingParser.SententialCalculus
 {
     public class Parser
     {
@@ -40,7 +40,7 @@ namespace LogicPoint.PrecedenceClimbingParser.BasicArithmetic
                 tokens.MoveNext();
                 return value;
             }
-            if (currentToken.TokenType == TokenType.Number) 
+            if (currentToken.TokenType == TokenType.Variable)
             {
                 var numeralNode = new LeafNode(currentToken.Element);
                 tokens.MoveNext();

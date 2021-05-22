@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicPoint.PrecedenceClimbingParsers", "LogicPoint.PrecedenceClimbingParser\LogicPoint.PrecedenceClimbingParsers.csproj", "{8887E6E9-722B-4800-BFF6-43079194DB61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicPoint.PrecedenceClimbingParser.BasicArithmetic", "LogicPoint.PrecedenceClimbingParser\LogicPoint.PrecedenceClimbingParser.BasicArithmetic.csproj", "{8887E6E9-722B-4800-BFF6-43079194DB61}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicPoint.PrecedenceClimbingParser.Tests", "LogicPoint.PrecedenceClimbingParser.Tests\LogicPoint.PrecedenceClimbingParser.Tests.csproj", "{2AE08BBB-A614-43DB-AE54-13E2E8D440E8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicPoint.PrecedenceClimbingParser.Printing", "LogicPoint.PrecedenceClimbingParser.Printing\LogicPoint.PrecedenceClimbingParser.Printing.csproj", "{5E6CAE9E-F6ED-4CF9-8146-1FB0A05BF8B3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicPoint.PrecedenceClimbingParser.Console", "LogicPoint.PrecedenceClimbingParser.Console\LogicPoint.PrecedenceClimbingParser.Console.csproj", "{ADA0AC64-EBAF-4F43-93F2-FD8DCC45A952}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicPoint.PrecedenceClimbingParser.SententialCalculus", "LogicPoint.PrecendenceClimbingParser.SententialCalculus\LogicPoint.PrecedenceClimbingParser.SententialCalculus.csproj", "{FE870D53-ECEE-415C-BAB3-A5047367190E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicPoint.PrecedenceClimbingParser.Abstractions", "LogicPoint.PrecedenceClimbingParser.Abstractions\LogicPoint.PrecedenceClimbingParser.Abstractions.csproj", "{35E86A50-9972-4B3E-8C31-A2D5132BA172}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{ADA0AC64-EBAF-4F43-93F2-FD8DCC45A952}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADA0AC64-EBAF-4F43-93F2-FD8DCC45A952}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADA0AC64-EBAF-4F43-93F2-FD8DCC45A952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE870D53-ECEE-415C-BAB3-A5047367190E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE870D53-ECEE-415C-BAB3-A5047367190E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE870D53-ECEE-415C-BAB3-A5047367190E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE870D53-ECEE-415C-BAB3-A5047367190E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35E86A50-9972-4B3E-8C31-A2D5132BA172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35E86A50-9972-4B3E-8C31-A2D5132BA172}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35E86A50-9972-4B3E-8C31-A2D5132BA172}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35E86A50-9972-4B3E-8C31-A2D5132BA172}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

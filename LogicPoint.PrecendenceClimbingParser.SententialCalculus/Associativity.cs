@@ -1,4 +1,4 @@
-﻿namespace LogicPoint.PrecedenceClimbingParser.BasicArithmetic
+﻿namespace LogicPoint.PrecedenceClimbingParser.SententialCalculus
 {
     public enum Associativity
     {

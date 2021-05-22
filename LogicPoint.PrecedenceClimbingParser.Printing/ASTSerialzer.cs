@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using LogicPoint.PrecedenceClimbingParser.Abstractions;
+using Newtonsoft.Json;
 using System;
 
 namespace LogicPoint.PrecedenceClimbingParser.Printing
@@ -28,9 +29,9 @@ namespace LogicPoint.PrecedenceClimbingParser.Printing
                 writer.WriteEndArray();
                 writer.WriteEndObject();
             }
-            else if (value.GetType() == typeof(NumeralNode))
+            else if (value.GetType() == typeof(LeafNode))
             {
-                var node = (NumeralNode)value;
+                var node = (LeafNode)value;
                 writer.WriteValue(node.Token);
             }
         }

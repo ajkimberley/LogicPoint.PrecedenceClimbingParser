@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace LogicPoint.PrecedenceClimbingParser.BasicArithmetic
+namespace LogicPoint.PrecedenceClimbingParser.SententialCalculus
 {
     [DataContract]
     public class Token

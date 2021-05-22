@@ -1,4 +1,6 @@
 ﻿using FluentAssertions;
+using LogicPoint.PrecedenceClimbingParser.Abstractions;
+using LogicPoint.PrecedenceClimbingParser.BasicArithmetic;
 using System;
 using Xunit;
 
@@ -13,10 +15,10 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
             var expected = new BinaryOperatorNode("+",
                                                   new BinaryOperatorNode("+",
                                                                          new BinaryOperatorNode("+",
-                                                                                                new NumeralNode("1"),
-                                                                                                new NumeralNode("2")),
-                                                                         new NumeralNode("3")),
-                                                  new NumeralNode("4"));
+                                                                                                new LeafNode("1"),
+                                                                                                new LeafNode("2")),
+                                                                         new LeafNode("3")),
+                                                  new LeafNode("4"));
             tree.Should().BeEquivalentTo(expected);
         }
 
@@ -27,10 +29,10 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
             var expected = new BinaryOperatorNode("-",
                                       new BinaryOperatorNode("-",
                                                              new BinaryOperatorNode("-",
-                                                                                    new NumeralNode("1"),
-                                                                                    new NumeralNode("2")),
-                                                             new NumeralNode("3")),
-                                      new NumeralNode("4"));
+                                                                                    new LeafNode("1"),
+                                                                                    new LeafNode("2")),
+                                                             new LeafNode("3")),
+                                      new LeafNode("4"));
             tree.Should().BeEquivalentTo(expected);
         }
 
@@ -41,10 +43,10 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
             var expected = new BinaryOperatorNode("*",
                                       new BinaryOperatorNode("*",
                                                              new BinaryOperatorNode("*",
-                                                                                    new NumeralNode("1"),
-                                                                                    new NumeralNode("2")),
-                                                             new NumeralNode("3")),
-                                      new NumeralNode("4"));
+                                                                                    new LeafNode("1"),
+                                                                                    new LeafNode("2")),
+                                                             new LeafNode("3")),
+                                      new LeafNode("4"));
             tree.Should().BeEquivalentTo(expected);
         }
 
@@ -55,10 +57,10 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
             var expected = new BinaryOperatorNode("/",
                                       new BinaryOperatorNode("/",
                                                              new BinaryOperatorNode("/",
-                                                                                    new NumeralNode("1"),
-                                                                                    new NumeralNode("2")),
-                                                             new NumeralNode("3")),
-                                      new NumeralNode("4"));
+                                                                                    new LeafNode("1"),
+                                                                                    new LeafNode("2")),
+                                                             new LeafNode("3")),
+                                      new LeafNode("4"));
             tree.Should().BeEquivalentTo(expected);
         }
 
@@ -67,12 +69,12 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
         {
             var tree = Parser.Parse("1^2^3^4");
             var expected = new BinaryOperatorNode("^",
-                                                  new NumeralNode("1"),
+                                                  new LeafNode("1"),
                                                   new BinaryOperatorNode("^",
-                                                                         new NumeralNode("2"),
+                                                                         new LeafNode("2"),
                                                                          new BinaryOperatorNode("^",
-                                                                                                new NumeralNode("3"),
-                                                                                                new NumeralNode("4"))));
+                                                                                                new LeafNode("3"),
+                                                                                                new LeafNode("4"))));
             tree.Should().BeEquivalentTo(expected);
         }
 
@@ -82,11 +84,11 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
             var tree = Parser.Parse("1+2*3+4");
             var expected = new BinaryOperatorNode("+",
                                                   new BinaryOperatorNode("+",
-                                                                         new NumeralNode("1"),
+                                                                         new LeafNode("1"),
                                                                          new BinaryOperatorNode("*",
-                                                                                                new NumeralNode("2"),
-                                                                                                new NumeralNode("3"))),
-                                                  new NumeralNode("4"));
+                                                                                                new LeafNode("2"),
+                                                                                                new LeafNode("3"))),
+                                                  new LeafNode("4"));
 
             tree.Should().BeEquivalentTo(expected);
         }
@@ -96,12 +98,12 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
         {
             var tree = Parser.Parse("1+2*3^4");
             var expected = new BinaryOperatorNode("+",
-                                                  new NumeralNode("1"),
+                                                  new LeafNode("1"),
                                                   new BinaryOperatorNode("*",
-                                                                         new NumeralNode("2"),
+                                                                         new LeafNode("2"),
                                                                          new BinaryOperatorNode("^",
-                                                                                                new NumeralNode("3"),
-                                                                                                new NumeralNode("4"))));
+                                                                                                new LeafNode("3"),
+                                                                                                new LeafNode("4"))));
             tree.Should().BeEquivalentTo(expected);
         }
 
@@ -110,10 +112,10 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
         {
             var tree = Parser.Parse("1*(2+3)");
             var expected = new BinaryOperatorNode("*",
-                                                  new NumeralNode("1"),
+                                                  new LeafNode("1"),
                                                   new BinaryOperatorNode("+",
-                                                                         new NumeralNode("2"),
-                                                                         new NumeralNode("3")));
+                                                                         new LeafNode("2"),
+                                                                         new LeafNode("3")));
             tree.Should().BeEquivalentTo(expected);
         }
 
@@ -122,12 +124,12 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
         {
             var tree = Parser.Parse("1^(2+3)^4");
             var expected = new BinaryOperatorNode("^",
-                                                 new NumeralNode("1"),
+                                                 new LeafNode("1"),
                                                  new BinaryOperatorNode("^",
                                                                         new BinaryOperatorNode("+",
-                                                                                               new NumeralNode("2"),
-                                                                                               new NumeralNode("3")),
-                                                                        new NumeralNode("4")));
+                                                                                               new LeafNode("2"),
+                                                                                               new LeafNode("3")),
+                                                                        new LeafNode("4")));
             tree.Should().BeEquivalentTo(expected);
         }
 

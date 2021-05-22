@@ -1,4 +1,4 @@
-﻿namespace LogicPoint.PrecedenceClimbingParser
+﻿namespace LogicPoint.PrecedenceClimbingParser.BasicArithmetic
 {
     public enum TokenType
     {

@@ -1,5 +1,6 @@
-﻿using static LogicPoint.PrecedenceClimbingParser.Parser;
+﻿using LogicPoint.PrecedenceClimbingParser.Abstractions;
 using static LogicPoint.PrecedenceClimbingParser.Printing.Printer;
+
 namespace LogicPoint.PrecedenceClimbingParser.Console
 {
     class Program
@@ -19,6 +20,6 @@ namespace LogicPoint.PrecedenceClimbingParser.Console
         }
 
         private static INode GenerateTreeFor(string input)
-            => Parse(input);
+            => SententialCalculus.Parser.Parse(input);
     }
 }

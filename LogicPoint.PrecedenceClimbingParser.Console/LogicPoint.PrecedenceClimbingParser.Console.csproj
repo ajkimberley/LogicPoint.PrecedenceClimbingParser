@@ -6,8 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LogicPoint.PrecedenceClimbingParser.Abstractions\LogicPoint.PrecedenceClimbingParser.Abstractions.csproj" />
     <ProjectReference Include="..\LogicPoint.PrecedenceClimbingParser.Printing\LogicPoint.PrecedenceClimbingParser.Printing.csproj" />
-    <ProjectReference Include="..\LogicPoint.PrecedenceClimbingParser\LogicPoint.PrecedenceClimbingParsers.csproj" />
+    <ProjectReference Include="..\LogicPoint.PrecedenceClimbingParser\LogicPoint.PrecedenceClimbingParser.BasicArithmetic.csproj" />
+    <ProjectReference Include="..\LogicPoint.PrecendenceClimbingParser.SententialCalculus\LogicPoint.PrecedenceClimbingParser.SententialCalculus.csproj" />
   </ItemGroup>
 
 </Project>
