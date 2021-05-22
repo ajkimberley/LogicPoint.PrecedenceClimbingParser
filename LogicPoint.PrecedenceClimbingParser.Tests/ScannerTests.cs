@@ -10,7 +10,7 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
     {
         [Theory]
         [MemberData(nameof(_theoryData))]
-        public void Given_ValidInput_Should_ProduceCorrectSequenceOfTokens(string input, List<TokenType> expected)
+        public void Given_ValidInput_Should_ProduceCorrectSequenceOfTokens(string input, List<ArithmeticTokenType> expected)
         {
             var actual = Scan(input);
             Assert.True(expected.SequenceEqual(actual.Select(x => x.TokenType)));
@@ -28,51 +28,51 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
             new object[]
             {
                 "1+1",
-                new List<TokenType>
+                new List<ArithmeticTokenType>
                 {
-                    TokenType.Number, TokenType.AdditionOperator, TokenType.Number
+                    ArithmeticTokenType.Number, ArithmeticTokenType.AdditionOperator, ArithmeticTokenType.Number
                 }
             },
             new object[]
             {
                 "1-1",
-                new List<TokenType>
+                new List<ArithmeticTokenType>
                 {
-                    TokenType.Number, TokenType.SubtractionOperator, TokenType.Number
+                    ArithmeticTokenType.Number, ArithmeticTokenType.SubtractionOperator, ArithmeticTokenType.Number
                 }
             },
             new object[]
             {
                 "1*1",
-                new List<TokenType>
+                new List<ArithmeticTokenType>
                 {
-                    TokenType.Number, TokenType.MultiplicationOperator, TokenType.Number
+                    ArithmeticTokenType.Number, ArithmeticTokenType.MultiplicationOperator, ArithmeticTokenType.Number
                 }
             },
             new object[]
             {
                 "1/1",
-                new List<TokenType>
+                new List<ArithmeticTokenType>
                 {
 
-                    TokenType.Number, TokenType.DivisionOperation, TokenType.Number
+                    ArithmeticTokenType.Number, ArithmeticTokenType.DivisionOperation, ArithmeticTokenType.Number
                 }
             },
             new object[]
             {
                 "101+202",
-                new List<TokenType>
+                new List<ArithmeticTokenType>
                 {
-                    TokenType.Number, TokenType.AdditionOperator, TokenType.Number
+                    ArithmeticTokenType.Number, ArithmeticTokenType.AdditionOperator, ArithmeticTokenType.Number
                 }
             },
             new object[]
             {
                 "10/4*4+105",
-                new List<TokenType>
+                new List<ArithmeticTokenType>
                 {
-                    TokenType.Number, TokenType.DivisionOperation, TokenType.Number, TokenType.MultiplicationOperator,
-                    TokenType.Number, TokenType.AdditionOperator, TokenType.Number
+                    ArithmeticTokenType.Number, ArithmeticTokenType.DivisionOperation, ArithmeticTokenType.Number, ArithmeticTokenType.MultiplicationOperator,
+                    ArithmeticTokenType.Number, ArithmeticTokenType.AdditionOperator, ArithmeticTokenType.Number
                 }
             }
         };

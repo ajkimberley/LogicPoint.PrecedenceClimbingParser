@@ -5,7 +5,7 @@ namespace LogicPoint.PrecedenceClimbingParser
     [DataContract]
     public class Token
     {
-        public Token(TokenType tokenType, Associativity associativity, int precedenceLevel, string element)
+        public Token(ArithmeticTokenType tokenType, Associativity associativity, int precedenceLevel, string element)
         {
             TokenType = tokenType;
             Associativity = associativity;
@@ -13,7 +13,7 @@ namespace LogicPoint.PrecedenceClimbingParser
             Element = element;
         }
 
-        public TokenType TokenType { get; }
+        public ArithmeticTokenType TokenType { get; }
         public Associativity Associativity { get; }
         public int PrecedenceLevel { get; }
         [DataMember]
