@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LogicPoint.PrecedenceClimbingParser\LogicPoint.PrecedenceClimbingParser.csproj" />
+    <ProjectReference Include="..\LogicPoint.PrecedenceClimbingParser\LogicPoint.PrecedenceClimbingParsers.csproj" />
   </ItemGroup>
 
 </Project>

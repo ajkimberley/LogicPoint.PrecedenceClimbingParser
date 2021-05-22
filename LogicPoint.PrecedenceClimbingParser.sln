@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicPoint.PrecedenceClimbingParser", "LogicPoint.PrecedenceClimbingParser\LogicPoint.PrecedenceClimbingParser.csproj", "{8887E6E9-722B-4800-BFF6-43079194DB61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicPoint.PrecedenceClimbingParsers", "LogicPoint.PrecedenceClimbingParser\LogicPoint.PrecedenceClimbingParsers.csproj", "{8887E6E9-722B-4800-BFF6-43079194DB61}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicPoint.PrecedenceClimbingParser.Tests", "LogicPoint.PrecedenceClimbingParser.Tests\LogicPoint.PrecedenceClimbingParser.Tests.csproj", "{2AE08BBB-A614-43DB-AE54-13E2E8D440E8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicPoint.PrecedenceClimbingParser.Printing", "LogicPoint.PrecedenceClimbingParser.Printing\LogicPoint.PrecedenceClimbingParser.Printing.csproj", "{5E6CAE9E-F6ED-4CF9-8146-1FB0A05BF8B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicPoint.PrecedenceClimbingParser.Console", "LogicPoint.PrecedenceClimbingParser.Console\LogicPoint.PrecedenceClimbingParser.Console.csproj", "{ADA0AC64-EBAF-4F43-93F2-FD8DCC45A952}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicPoint.PrecedenceClimbingParser.Console", "LogicPoint.PrecedenceClimbingParser.Console\LogicPoint.PrecedenceClimbingParser.Console.csproj", "{ADA0AC64-EBAF-4F43-93F2-FD8DCC45A952}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
