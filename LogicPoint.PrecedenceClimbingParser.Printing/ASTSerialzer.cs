@@ -18,6 +18,16 @@ namespace LogicPoint.PrecedenceClimbingParser.Printing
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
+            if (value.GetType() == typeof(UnaryOperatorNode))
+            {
+                var node = (UnaryOperatorNode)value;
+                writer.WriteStartObject();
+                writer.WritePropertyName(node.Token);
+                writer.WriteStartArray();
+                serializer.Serialize(writer, node.Operand);
+                writer.WriteEndArray();
+                writer.WriteEndObject();
+            }
             if (value.GetType() == typeof(BinaryOperatorNode))
             {
                 var node = (BinaryOperatorNode)value;

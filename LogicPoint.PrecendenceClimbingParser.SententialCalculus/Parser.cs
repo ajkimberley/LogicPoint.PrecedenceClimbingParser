@@ -40,6 +40,13 @@ namespace LogicPoint.PrecedenceClimbingParser.SententialCalculus
                 tokens.MoveNext();
                 return value;
             }
+            if (currentToken.TokenType == TokenType.NegationOperator)
+            {
+                var negationElement = currentToken.Element;
+                tokens.MoveNext();
+                var negationNode = new UnaryOperatorNode(negationElement, ParseElement(tokens));
+                return negationNode;
+            }
             if (currentToken.TokenType == TokenType.Variable)
             {
                 var numeralNode = new LeafNode(currentToken.Element);

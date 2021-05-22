@@ -19,6 +19,20 @@ namespace LogicPoint.PrecedenceClimbingParser.Abstractions
     }
 
     [DataContract]
+    public class UnaryOperatorNode : INode
+    {
+        public UnaryOperatorNode(string token, INode operand)
+        {
+            Token = token;
+            Operand = operand;
+        }
+        [DataMember]
+        public string Token { get; }
+        [DataMember]
+        public INode Operand { get; }
+    }
+
+    [DataContract]
     public class BinaryOperatorNode : INode
     {
         public BinaryOperatorNode(string token, INode lhs, INode rhs)
