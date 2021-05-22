@@ -1,6 +1,6 @@
 ﻿namespace LogicPoint.PrecedenceClimbingParser
 {
-    public enum ArithmeticTokenType
+    public enum TokenType
     {
         Number,
         AdditionOperator,

@@ -9,7 +9,7 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
         [Fact]
         public void Given_ThreeSums_Then_GenerateLeftAssociativeTree()
         {
-            var tree = BasicArithmeticParser.Parse("1+2+3+4") as BinaryOperatorNode;
+            var tree = Parser.Parse("1+2+3+4") as BinaryOperatorNode;
             var expected = new BinaryOperatorNode("+",
                                                   new BinaryOperatorNode("+",
                                                                          new BinaryOperatorNode("+",
@@ -23,7 +23,7 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
         [Fact]
         public void Given_ThreeSubtractions_Then_GenerateLeftAssociativeTree()
         {
-            var tree = BasicArithmeticParser.Parse("1-2-3-4");
+            var tree = Parser.Parse("1-2-3-4");
             var expected = new BinaryOperatorNode("-",
                                       new BinaryOperatorNode("-",
                                                              new BinaryOperatorNode("-",
@@ -37,7 +37,7 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
         [Fact]
         public void Given_ThreeMultiplications_Then_GenerateLeftAssociativeTree()
         {
-            var tree = BasicArithmeticParser.Parse("1*2*3*4");
+            var tree = Parser.Parse("1*2*3*4");
             var expected = new BinaryOperatorNode("*",
                                       new BinaryOperatorNode("*",
                                                              new BinaryOperatorNode("*",
@@ -51,7 +51,7 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
         [Fact]
         public void Given_ThreeDivisions_Then_GenerateLeftAssociativeTree()
         {
-            var tree = BasicArithmeticParser.Parse("1/2/3/4");
+            var tree = Parser.Parse("1/2/3/4");
             var expected = new BinaryOperatorNode("/",
                                       new BinaryOperatorNode("/",
                                                              new BinaryOperatorNode("/",
@@ -65,7 +65,7 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
         [Fact]
         public void Given_ThreeExponentiations_Then_GenerateRightAssociativeTree()
         {
-            var tree = BasicArithmeticParser.Parse("1^2^3^4");
+            var tree = Parser.Parse("1^2^3^4");
             var expected = new BinaryOperatorNode("^",
                                                   new NumeralNode("1"),
                                                   new BinaryOperatorNode("^",
@@ -79,7 +79,7 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
         [Fact]
         public void Given_SumFollowedByMultiplicationFollowedBySum_GenerateTreeWithMultiplicationAtBottom()
         {
-            var tree = BasicArithmeticParser.Parse("1+2*3+4");
+            var tree = Parser.Parse("1+2*3+4");
             var expected = new BinaryOperatorNode("+",
                                                   new BinaryOperatorNode("+",
                                                                          new NumeralNode("1"),
@@ -94,7 +94,7 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
         [Fact]
         public void Given_SumFollowedByMultiplicationFollowedByExponentiation_Then_GenerateTreeWithCorrectPrecedence()
         {
-            var tree = BasicArithmeticParser.Parse("1+2*3^4");
+            var tree = Parser.Parse("1+2*3^4");
             var expected = new BinaryOperatorNode("+",
                                                   new NumeralNode("1"),
                                                   new BinaryOperatorNode("*",
@@ -108,7 +108,7 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
         [Fact]
         public void Given_MultiplicationFollowedByBracketedAddition_Then_GenerateTreeWithAdditionTakingPrecedence()
         {
-            var tree = BasicArithmeticParser.Parse("1*(2+3)");
+            var tree = Parser.Parse("1*(2+3)");
             var expected = new BinaryOperatorNode("*",
                                                   new NumeralNode("1"),
                                                   new BinaryOperatorNode("+",
@@ -120,7 +120,7 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
         [Fact]
         public void Given_BracketedAdditionInBetweenTwoExponentiations_Then_GenerateTreeWithAdditionTakingPrecedence()
         {
-            var tree = BasicArithmeticParser.Parse("1^(2+3)^4");
+            var tree = Parser.Parse("1^(2+3)^4");
             var expected = new BinaryOperatorNode("^",
                                                  new NumeralNode("1"),
                                                  new BinaryOperatorNode("^",
@@ -139,7 +139,7 @@ namespace LogicPoint.PrecedenceClimbingParser.Tests
         [InlineData(new object[] { "1++2" })]
         public void Given_InvalidInput_ThrowException(string invalidInput)
         {
-            Assert.Throws<Exception>(() => BasicArithmeticParser.Parse(invalidInput));
+            Assert.Throws<Exception>(() => Parser.Parse(invalidInput));
         }
     }
 }

@@ -19,7 +19,7 @@ namespace LogicPoint.PrecedenceClimbingParser
                     {
                         numeral += (char)reader.Read();
                     }
-                    yield return new Token(ArithmeticTokenType.Number, Associativity.None, 0, numeral);
+                    yield return new Token(TokenType.Number, Associativity.None, 0, numeral);
                 }
                 else
                 {
@@ -27,25 +27,25 @@ namespace LogicPoint.PrecedenceClimbingParser
                     switch (charString)
                     {
                         case "+":
-                            yield return new Token(ArithmeticTokenType.AdditionOperator, Associativity.Left, 1, charString);
+                            yield return new Token(TokenType.AdditionOperator, Associativity.Left, 1, charString);
                             break;
                         case "-":
-                            yield return new Token(ArithmeticTokenType.SubtractionOperator, Associativity.Left, 1, charString);
+                            yield return new Token(TokenType.SubtractionOperator, Associativity.Left, 1, charString);
                             break;
                         case "*":
-                            yield return new Token(ArithmeticTokenType.MultiplicationOperator, Associativity.Left, 2, charString);
+                            yield return new Token(TokenType.MultiplicationOperator, Associativity.Left, 2, charString);
                             break;
                         case "/":
-                            yield return new Token(ArithmeticTokenType.DivisionOperation, Associativity.Left, 2, charString);
+                            yield return new Token(TokenType.DivisionOperation, Associativity.Left, 2, charString);
                             break;
                         case "^":
-                            yield return new Token(ArithmeticTokenType.ExponentiationOperator, Associativity.Right, 3, charString);
+                            yield return new Token(TokenType.ExponentiationOperator, Associativity.Right, 3, charString);
                             break;
                         case "(":
-                            yield return new Token(ArithmeticTokenType.LeftBracket, Associativity.None, 0, charString);
+                            yield return new Token(TokenType.LeftBracket, Associativity.None, 0, charString);
                             break;
                         case ")":
-                            yield return new Token(ArithmeticTokenType.RightBracket, Associativity.None, 0, charString);
+                            yield return new Token(TokenType.RightBracket, Associativity.None, 0, charString);
                             break;
                         default:
                             throw new ArgumentException("Character not recognized in input.", nameof(input));

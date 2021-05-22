@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace LogicPoint.PrecedenceClimbingParser
 {
-    public class BasicArithmeticParser
+    public class Parser
     {
         public static INode Parse(string input)
         {
@@ -32,14 +32,14 @@ namespace LogicPoint.PrecedenceClimbingParser
         private static INode ParseElement(IEnumerator<Token> tokens)
         {
             var currentToken = tokens.Current;
-            if (currentToken.TokenType == ArithmeticTokenType.LeftBracket)
+            if (currentToken.TokenType == TokenType.LeftBracket)
             {
                 var value = ParseExpression(tokens, 1);
-                if (tokens.Current.TokenType != ArithmeticTokenType.RightBracket) throw new Exception("Unmatched left bracket detected");
+                if (tokens.Current.TokenType != TokenType.RightBracket) throw new Exception("Unmatched left bracket detected");
                 tokens.MoveNext();
                 return value;
             }
-            if (currentToken.TokenType == ArithmeticTokenType.Number) 
+            if (currentToken.TokenType == TokenType.Number) 
             {
                 var numeralNode = new NumeralNode(currentToken.Element);
                 tokens.MoveNext();

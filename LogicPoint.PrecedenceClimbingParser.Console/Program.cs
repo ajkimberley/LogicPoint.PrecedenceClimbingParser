@@ -1,4 +1,4 @@
-﻿using static LogicPoint.PrecedenceClimbingParser.BasicArithmeticParser;
+﻿using static LogicPoint.PrecedenceClimbingParser.Parser;
 using static LogicPoint.PrecedenceClimbingParser.Printing.Printer;
 namespace LogicPoint.PrecedenceClimbingParser.Console
 {
